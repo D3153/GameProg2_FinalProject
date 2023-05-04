@@ -16,3 +16,6 @@ This folder contains the files and folders that are required every couple of wee
 - [Craig Justin Balibalos](https://github.com/CraigJustinBalibalos)
 - [Jonathan Dimitriu](https://github.com/BenchaminDimitriu)
 
+## CheckList
+
+[What the game needs](https://eduvaniercollegeqc-my.sharepoint.com/:o:/g/personal/1967510_edu_vaniercollege_qc_ca/EuoQQmHrqe5IvmAxKDGri_UBnaG0PRr1g-PjTAobN1dosg?e=rgwIjQ)
