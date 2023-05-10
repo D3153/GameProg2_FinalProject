@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour
     public float minAngle = -30;
     public float maxAngle = 30;
     float camRotation = 0;
-    // public Vector2 turn;
+    public Vector2 turn;
 
     // Start is called before the first frame update
     void Start()
