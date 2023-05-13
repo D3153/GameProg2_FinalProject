@@ -796,9 +796,10 @@ MonoBehaviour:
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  pfWaterProjectile: {fileID: 7188330110420778152, guid: d358d0742f616d34080ae2d8b4f88ba3,
+  pfWaterProjectile: {fileID: 8692829521126138185, guid: d358d0742f616d34080ae2d8b4f88ba3,
     type: 3}
   spawnWaterPosition: {fileID: 956382987}
+  interpolationFramesCount: 45
 --- !u!1 &899499610
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956382986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.423, z: 0.794}
+  m_LocalPosition: {x: 0, y: 1.423, z: 1.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 884819233}
