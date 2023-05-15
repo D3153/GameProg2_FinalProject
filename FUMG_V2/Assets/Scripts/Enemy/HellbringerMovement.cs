@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 // using UnityEngine.SceneManagement;
 
-public class HellbringerMovement : MonoBehaviour
+public class HellbringerBehaviour : MonoBehaviour
 {
     public GameObject player;
     

@@ -6,12 +6,12 @@ public class PlayerObjectiveBehaviour : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public GameObject enemyObjective;
+    bool enemyObjectiveSpawned;
 
     // Start is called before the first frame update
     void Start()
     {
-        // playerObjective = GameObject.FindWithTag("PlayerObjective");
-        // gameObject.SetActive(false);
+        enemyObjectiveSpawned = false;
     }
 
     // Update is called once per frame
@@ -22,17 +22,16 @@ public class PlayerObjectiveBehaviour : MonoBehaviour
 
     void OnCollisionEnter(Collision obj) 
     {
-        // playerObjective = Instantiate(objectToSpawn, transform.position, transform.rotation, gameObject.transform);
-        // PlayerObjective po = playerObjective.GetComponent<PlayerObjective>();
-        
-        // Debug.Log("Target hit");
-        if(obj.collider.tag == "PlayerProjectile")
+        if(obj.collider.tag == "EnemyProjectile")
         {
-            // playerObjective.SetActive(true);
-            // gameObject.SetActive(false);
-            Debug.Log("Target hit by player");
-            Destroy(obj.gameObject);
+            if(!enemyObjectiveSpawned){
+                Debug.Log("Target hit by player");
+                Instantiate(enemyObjective, transform.position, transform.rotation);
+                Destroy(gameObject);
+                Destroy(obj.gameObject); 
+            }
+            enemyObjectiveSpawned = true;
         }    
-        
     }
+
 }

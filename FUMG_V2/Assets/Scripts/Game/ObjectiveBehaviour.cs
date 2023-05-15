@@ -13,7 +13,6 @@ public class ObjectiveBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // playerObjective = GameObject.FindWithTag("PlayerObjective");
         playerObjectiveSpawned = false;
         enemyObjectiveSpawned = false;
     }
@@ -26,17 +25,10 @@ public class ObjectiveBehaviour : MonoBehaviour
 
     void OnCollisionEnter(Collision obj) 
     {
-        // playerObjective = Instantiate(objectToSpawn, transform.position, transform.rotation, gameObject.transform);
-        // PlayerObjective po = playerObjective.GetComponent<PlayerObjective>();
-        
-        // Debug.Log("Target hit");
         if(obj.collider.tag == "PlayerProjectile")
         {
-            // playerObjective.SetActive(true);
-            // gameObject.SetActive(false);
-            if(playerObjectiveSpawned == false){
+            if(!playerObjectiveSpawned){
                 Debug.Log("Target hit by player");
-                // Instantiate(playerObjective, transform.position, transform.rotation, gameObject.transform);
                 Instantiate(playerObjective, transform.position, transform.rotation);
                 Destroy(gameObject);
                 Destroy(obj.gameObject);
@@ -46,16 +38,14 @@ public class ObjectiveBehaviour : MonoBehaviour
         
         if(obj.collider.tag == "EnemyProjectile")
         {
-            // playerObjective.SetActive(true);
-            // gameObject.SetActive(false);
             if(!enemyObjectiveSpawned){
                 Debug.Log("Target hit by player");
-                // Instantiate(enemyObjective, transform.position, transform.rotation, gameObject.transform);
-                Instantiate(playerObjective, transform.position, transform.rotation);
+                Instantiate(enemyObjective, transform.position, transform.rotation);
                 Destroy(gameObject);
                 Destroy(obj.gameObject); 
             }
             enemyObjectiveSpawned = true;
         }    
     }
+
 }

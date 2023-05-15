@@ -25,26 +25,36 @@ public class ShootingComponent : MonoBehaviour
         {
             timer = 1.0f;
 
-            Instantiate(objectToSpawn3, transform.position, transform.rotation);
-            // water = Instantiate(objectToSpawn, transform.position, transform.rotation, gameObject.transform);
-            // bullet = Instantiate(objectToSpawn2, transform.position, transform.rotation, gameObject.transform);
+            // Instantiate(objectToSpawn3, transform.position, transform.rotation);
+            water = Instantiate(objectToSpawn, transform.position, transform.rotation, gameObject.transform);
+            bullet = Instantiate(objectToSpawn2, transform.position, transform.rotation, gameObject.transform);
            
-            // WaterComponent wc = water.GetComponent<WaterComponent>();
-            // BulletComponent bc = bullet.GetComponent<BulletComponent>();
+            WaterComponent wc = water.GetComponent<WaterComponent>();
+            BulletComponent bc = bullet.GetComponent<BulletComponent>();
 
-            // if( wc != null && bc != null)
-            // {
-            //     // wc.inputHoldRatio = (timer/maxHoldTime);
-            //     bc.inputHoldRatio = (timer/maxHoldTime);
+            if( wc != null && bc != null)
+            {
+                // wc.inputHoldRatio = (timer/maxHoldTime);
+                bc.inputHoldRatio = (timer/maxHoldTime);
 
-            //     water.SetActive(true);
-            //     bullet.SetActive(true);
-            // }
-            // timer = 0.0f;
+                water.SetActive(true);
+                bullet.SetActive(true);
+            }
+            timer = 0.0f;
         }
         else if(Input.GetButtonUp("Fire1")){
-            // water.SetActive(false);
-            // Destroy(water);
+            water.SetActive(false);
+            Destroy(water);
+        }
+
+        if(Input.GetButton("Fire1")){
+            timer = 1.0f;
+            Instantiate(objectToSpawn2, transform.position, transform.rotation, gameObject.transform);
+        }
+
+        if(Input.GetKey(KeyCode.Q)){
+            timer = 1.0f;
+            Instantiate(objectToSpawn3, transform.position, transform.rotation);
         }
     }
 }
