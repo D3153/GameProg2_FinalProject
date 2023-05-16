@@ -35,7 +35,6 @@ public class MovementScript : MonoBehaviour
     public void Update()
     {
        ProcessMovement();
-    //    UpdateAnimator();
     }
 
     // void DisableRootMotion()
