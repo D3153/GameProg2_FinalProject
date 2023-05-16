@@ -16,7 +16,7 @@ public class BulletComponent : MonoBehaviour
         {
             rb.AddForce(transform.forward * strenght * inputHoldRatio, ForceMode.Impulse);
         }
-        Destroy(gameObject,5.0f);
+        Destroy(gameObject,1.0f);
     }
 
     // Update is called once per frame

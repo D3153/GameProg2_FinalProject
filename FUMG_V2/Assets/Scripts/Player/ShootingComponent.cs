@@ -27,18 +27,19 @@ public class ShootingComponent : MonoBehaviour
 
             // Instantiate(objectToSpawn3, transform.position, transform.rotation);
             water = Instantiate(objectToSpawn, transform.position, transform.rotation, gameObject.transform);
-            bullet = Instantiate(objectToSpawn2, transform.position, transform.rotation, gameObject.transform);
+            // bullet = Instantiate(objectToSpawn2, transform.position, transform.rotation, gameObject.transform);
            
             WaterComponent wc = water.GetComponent<WaterComponent>();
-            BulletComponent bc = bullet.GetComponent<BulletComponent>();
+            // BulletComponent bc = bullet.GetComponent<BulletComponent>();
 
-            if( wc != null && bc != null)
+            // if( wc != null && bc != null)
+            if( wc != null)
             {
                 // wc.inputHoldRatio = (timer/maxHoldTime);
-                bc.inputHoldRatio = (timer/maxHoldTime);
+                // bc.inputHoldRatio = (timer/maxHoldTime);
 
                 water.SetActive(true);
-                bullet.SetActive(true);
+                // bullet.SetActive(true);
             }
             timer = 0.0f;
         }

@@ -33,7 +33,7 @@ public class HellbringerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.speed = 2f;
+        agent.speed = 5f;
         if(!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
     }

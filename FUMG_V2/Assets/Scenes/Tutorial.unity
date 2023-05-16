@@ -23352,7 +23352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &879117741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57016,7 +57016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4432954453680430859, guid: af28fd7d42a148e44a60abdf372d59aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03999996
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4432954453680430859, guid: af28fd7d42a148e44a60abdf372d59aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57053,6 +57053,10 @@ PrefabInstance:
     - target: {fileID: 4434001546878423571, guid: af28fd7d42a148e44a60abdf372d59aa, type: 3}
       propertyPath: m_Name
       value: WaterGunEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434001546878423571, guid: af28fd7d42a148e44a60abdf372d59aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af28fd7d42a148e44a60abdf372d59aa, type: 3}

@@ -7,6 +7,8 @@ public class EnemyObjectiveBehaviour : MonoBehaviour
     public GameObject objectToSpawn;
     public GameObject playerObjective;
     bool playerObjectiveSpawned;
+    float pointIncreasedPerSec = 2.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,14 @@ public class EnemyObjectiveBehaviour : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void FixedUpdate() 
+    {
+        if(GameManager.Instance.enemyPoints < 100){
+            GameManager.Instance.IncreaseEnemyScore();
+        }
+        Debug.Log(GameManager.Instance.enemyPoints);
     }
 
     private void OnCollisionEnter(Collision obj) 
@@ -30,6 +40,11 @@ public class EnemyObjectiveBehaviour : MonoBehaviour
                 Destroy(obj.gameObject);
             }
             playerObjectiveSpawned = true;
+        }
+
+        if(obj.collider.tag == "EnemyProjectile")
+        {
+            Destroy(obj.gameObject);
         }   
     }
 }

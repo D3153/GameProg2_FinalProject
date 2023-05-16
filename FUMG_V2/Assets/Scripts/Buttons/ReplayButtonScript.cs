@@ -21,7 +21,7 @@ public class ReplayButtonScript : MonoBehaviour
 
     public void ReplayGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
         // GameManager.Instance.playerScore = 0;
     }
 }
