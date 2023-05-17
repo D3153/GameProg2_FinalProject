@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public Text PlayerObjectiveText;
+    public Text EnemyObjectiveText;    
     public static GameManager Instance { get; private set; }
     public float playerPoints;
     public float enemyPoints;
@@ -28,7 +30,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PlayerObjectiveText.text = "Player Objective Progress :" + playerPoints;
+        EnemyObjectiveText.text = "Enemy Objective Progress :" + enemyPoints;        
     }
 
     public void IncreasePlayerScore()
