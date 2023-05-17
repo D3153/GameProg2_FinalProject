@@ -39,7 +39,7 @@ public class ObjectiveBehaviour : MonoBehaviour
         if(obj.collider.tag == "EnemyProjectile")
         {
             if(!enemyObjectiveSpawned){
-                Debug.Log("Target hit by player");
+                Debug.Log("Target hit by enemy");
                 Instantiate(enemyObjective, transform.position, transform.rotation);
                 Destroy(gameObject);
                 Destroy(obj.gameObject); 

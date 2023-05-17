@@ -24,12 +24,19 @@ public class HellbringerShootingBehaviour : MonoBehaviour
     {
         if(SeePlayer())
         {
+            Debug.Log("See Player");
             ShootAtPlayer();
-        }
+        }else Debug.Log("No Player");
+
     }
 
     void ShootAtPlayer(){
         Instantiate(fireball, transform.position, transform.rotation);
+        // PlayerComponent pc =  hit.collider.gameObject.GetComponent<PlayerComponent>();
+        // if (pc != null)
+        // {
+        //     pc.ProcessHit();
+        // }
     }
 
     public bool SeePlayer()
