@@ -8,14 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public Text PlayerObjectiveText;
     public Text EnemyObjectiveText;    
-
-    public GameObject objective;
-
-    public Transform[] spawnPoints;
-    public Transform spawnPoint;
-
     public static GameManager Instance { get; private set; }
-
     public float playerPoints;
     public float enemyPoints;
     float pointIncreasedPerSec = 2.0f;
@@ -31,14 +24,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnObjective();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerObjectiveText.text = "Player Objective Progress :" + ((int)playerPoints).ToString();
-        EnemyObjectiveText.text = "Enemy Objective Progress :" + ((int)enemyPoints).ToString();        
+        PlayerObjectiveText.text = "Player Objective Progress :" + playerPoints;
+        EnemyObjectiveText.text = "Enemy Objective Progress :" + enemyPoints;        
     }
 
     public void IncreasePlayerScore()
@@ -47,7 +40,6 @@ public class GameManager : MonoBehaviour
         playerPoints += pointIncreasedPerSec * Time.fixedDeltaTime;
         if(playerPoints >= 100){
             Debug.Log("Player Wins");
-            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(4);
         }
     }
@@ -58,22 +50,17 @@ public class GameManager : MonoBehaviour
         enemyPoints += pointIncreasedPerSec * Time.fixedDeltaTime;
         if(enemyPoints >= 100){
             Debug.Log("Enemy Wins");
-            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(4);
         }
     }
 
-    public Transform GetRandomSpawnPoint()
-    {
-        int index = Random.Range(0, spawnPoints.Length);
-        return spawnPoints[index];
+    void WinLose(){
+        if(playerPoints >= 50){
+            // playerExp += 100;
+            Debug.Log("Player Wins");
+        }
+        else if(enemyPoints == 100){
+            // playerExp += 50;
+        }
     }
-
-    public void SpawnObjective()
-    {
-        spawnPoint = GetRandomSpawnPoint();
-        Debug.Log(spawnPoint);
-        Instantiate(objective, spawnPoint.position, spawnPoint.rotation);
-    }
-
 }

@@ -26,7 +26,6 @@ public class EscapeTutorialScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(0);
         }
     }

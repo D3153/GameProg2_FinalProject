@@ -4,15 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 // using UnityEngine.SceneManagement;
 
-public class HellbringerBehaviour : MonoBehaviour
+public class HellbringerMovement : MonoBehaviour
 {
     public GameObject player;
     public GameObject fireball;
     
-    public Transform[] patrolPoints1;
-    public Transform[] patrolPoints2;
-    public Transform[] patrolPoints3;
-
+    public Transform[] patrolPoints;
     private int destination = 0;
     private NavMeshAgent agent;
 
@@ -42,32 +39,12 @@ public class HellbringerBehaviour : MonoBehaviour
     }
 
     void GotoNextPoint(){
-        if(GameManager.Instance.spawnPoint.name == "ObjectiveSpawnPoint1"){
-            if(patrolPoints1.Length == 0)
-                return;
+        if(patrolPoints.Length == 0)
+            return;
 
-            agent.destination = patrolPoints1[destination].position;
+        agent.destination = patrolPoints[destination].position;
 
-            destination = (destination + 1) % patrolPoints1.Length;
-        }
-        
-        if(GameManager.Instance.spawnPoint.name == "ObjectiveSpawnPoint2"){
-            if(patrolPoints2.Length == 0)
-                return;
-
-            agent.destination = patrolPoints2[destination].position;
-
-            destination = (destination + 1) % patrolPoints2.Length;
-        }
-
-        if(GameManager.Instance.spawnPoint.name == "ObjectiveSpawnPoint3"){
-            if(patrolPoints3.Length == 0)
-                return;
-
-            agent.destination = patrolPoints3[destination].position;
-
-            destination = (destination + 1) % patrolPoints3.Length;
-        }
+        destination = (destination + 1) % patrolPoints.Length;
     }
 
     void OnCollisionEnter(Collision obj)
