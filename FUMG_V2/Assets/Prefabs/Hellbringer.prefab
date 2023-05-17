@@ -285,7 +285,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   maxAngle: 45
-  maxDistance: 2
+  maxDistance: 5
   timer: 1
   visionCheckRate: 1
   health: 100
