@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 6381696273868364029}
   - component: {fileID: 3613256350633417700}
   - component: {fileID: -107665299490807326}
-  - component: {fileID: 8952934381818123798}
+  - component: {fileID: 340892045653072017}
   m_Layer: 0
   m_Name: Hellbringer
   m_TagString: Untagged
@@ -331,7 +331,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8952934381818123798
+--- !u!114 &340892045653072017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,11 +344,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  patrolPoints: []
+  fireball: {fileID: 0}
+  patrolPoints1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  patrolPoints2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  patrolPoints3:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   maxAngle: 45
   maxDistance: 2
   timer: 1
   visionCheckRate: 1
+  health: 100
 --- !u!1 &386770128694690123
 GameObject:
   m_ObjectHideFlags: 0
