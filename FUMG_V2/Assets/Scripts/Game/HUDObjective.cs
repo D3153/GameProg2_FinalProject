@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUDObjective : MonoBehaviour
@@ -12,12 +13,16 @@ public class HUDObjective : MonoBehaviour
     public GameObject playerObjective;
     public GameObject enemyObjective;
     float pointIncreasedPerSec = 2.0f;
+    public Slider playerSlider;
+    public Slider enemySlider;
 
     // Update is called once per frame
     void Update()
     {
-        PlayerObjectiveText.text = "Player Objective Progress :" + playerPoints;
+        PlayerObjectiveText.text = "Player Objective Progress :";
+        playerSlider.value = playerPoints;
         EnemyObjectiveText.text = "Enemy Objective Progress :" + enemyPoints;
+        enemySlider.value = enemyPoints;
     }
 
     private void FixedUpdate() 

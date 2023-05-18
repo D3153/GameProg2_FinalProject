@@ -10,7 +10,7 @@ public class EndSceneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EndMessage();
     }
 
     // Update is called once per frame

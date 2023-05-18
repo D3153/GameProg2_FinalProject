@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public float playerPoints;
     public float enemyPoints;
     float pointIncreasedPerSec = 2.0f;
+    
+    public Slider playerSlider;
+    public Slider enemySlider;
     // float playerExp;
 
     private void Awake()
@@ -38,7 +41,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PlayerObjectiveText.text = "Player Objective Progress :" + ((int)playerPoints).ToString();
-        EnemyObjectiveText.text = "Enemy Objective Progress :" + ((int)enemyPoints).ToString();        
+        playerSlider.value = playerPoints;
+        EnemyObjectiveText.text = "Enemy Objective Progress :" + ((int)enemyPoints).ToString();
+        enemySlider.value = enemyPoints;        
     }
 
     public void IncreasePlayerScore()
